@@ -1,0 +1,23 @@
+{
+	"name": "hypejunction/menus_access",
+	"version": "0.0.0",
+	"type": "elgg-plugin",
+	"description": "Acces menu item for Elgg",
+	"homepage": "http://hypejunction.com",
+	"keywords": [
+		"elgg", "plugin", "ui", "menus", "access"
+	],
+	"license": "GPL-2.0",
+	"authors": [
+		{
+			"name": "Ismayil Khayredinov",
+			"email": "info@hypejunction.com"
+		}
+	],
+	"require": {
+		"php": ">=5.5",
+		"composer/installers": "1.*",
+		"hypejunction/elgg_lightbox": "*"
+	}
+}
+
