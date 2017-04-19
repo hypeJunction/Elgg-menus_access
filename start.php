@@ -21,7 +21,6 @@ function menus_access_init() {
 	elgg_register_ajax_view('menus/access');
 
 	elgg_extend_view('elgg.js', 'menus/access.js');
-	elgg_extend_view('elgg.css', 'menus/access.css');
 
 	elgg_register_action('access/edit', __DIR__ . '/actions/access/edit.php');
 }
@@ -42,7 +41,7 @@ function menus_access_entity_menu_setup($hook, $type, $return, $params) {
 	foreach ($return as &$item) {
 
 		if ($item->getName() == 'location') {
-			$item = false;
+			unset($item);
 			continue;
 		}
 
@@ -71,6 +70,9 @@ function menus_access_entity_menu_setup($hook, $type, $return, $params) {
 			$item->setHref("ajax/view/menus/access?guid=$entity->guid");
 			$item->addLinkClass('elgg-lightbox');
 			$item->{"data-guid"} = $entity->guid;
+			$item->{"data-colorbox-opts"} = json_encode([
+				maxWidth => '600px',
+			]);
 		}
 	}
 
